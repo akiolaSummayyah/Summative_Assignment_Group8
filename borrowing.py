@@ -11,26 +11,26 @@ class Borrowing:
         self.is_returned = False
 
     def mark_returned(self, return_date=None):
-        # the use of this method is to mark the borrowing record as returned, setting the return date to the current date or a specified date.
-        self.return_date = return_date if return_date else datetime.now()
-        self.is_returned = True
-
+         # the use of this method is to mark the borrowing record as returned, setting the return date to the current date or a specified date.
+         self.return_date = return_date if return_date else datetime.now()
+         self.is_returned = True
+ 
     def is_overdue(self):
-        # This method checks if the borrowing is overdue by comparing the current date with the due date. If the item has been returned, it is not considered overdue.
-        if self.is_returned:
-            return False
-        return datetime.now() > self.due_date
-
+         # This method checks if the borrowing is overdue by comparing the current date with the due date. If the item has been returned, it is not considered overdue.
+         if self.is_returned:
+             return False
+         return datetime.now() > self.due_date
+ 
     def display(self): 
-        # The use of this method is to display the borrowing record's details, including the resource ID, student ID, borrow date, due date, and status (borrowed, returned, or overdue).
-        if self.is_returned:
-            status = "Returned"
-        elif self.is_overdue():
-            status = "Overdue"
-        else:
-            status = "Borrowed"
-        return (f"Resource ID: {self.resource_id}, Student ID: {self.student_id}, "
-                f"Borrow Date: {self.borrow_date.strftime('%Y-%m-%d')}, "
-                f"Due Date: {self.due_date.strftime('%Y-%m-%d')}, Status: {status}")
-    
-    
+         # The use of this method is to display the borrowing record's details, including the resource ID, student ID, borrow date, due date, and status (borrowed, returned, or overdue).
+         if self.is_returned:
+             status = "Returned"
+         elif self.is_overdue():
+             status = "Overdue"
+         else:
+             status = "Borrowed"
+         return (f"Resource ID: {self.resource_id}, Student ID: {self.student_id}, "
+                 f"Borrow Date: {self.borrow_date.strftime('%Y-%m-%d')}, "
+                 f"Due Date: {self.due_date.strftime('%Y-%m-%d')}, Status: {status}")
+     
+        
