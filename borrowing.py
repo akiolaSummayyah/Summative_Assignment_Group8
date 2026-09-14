@@ -2,13 +2,13 @@ from datetime import datetime, timedelta
 
 class Borrowing:
     # The class represents a borrowing record, containing information about the resource borrowed, the student who borrowed it, the borrow date, due date, return date, and whether it has been returned or not.
-    def __init__(self, resource_id, student_id, due_days, borrow_date=None):
+    def __init__(self, resource_id, student_id, due_days, borrow_date=None return_date=None, is_returned=False):
         self.resource_id = resource_id
         self.student_id = student_id
         self.borrow_date = borrow_date if borrow_date else datetime.now()
         self.due_date = self.borrow_date + timedelta(days=due_days)
-        self.return_date = None
-        self.is_returned = False
+        self.return_date = return_date 
+        self.is_returned = self.is_returned
 
     def mark_returned(self, return_date=None):
          # the use of this method is to mark the borrowing record as returned, setting the return date to the current date or a specified date.
