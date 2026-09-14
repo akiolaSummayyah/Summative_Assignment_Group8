@@ -12,4 +12,15 @@ class Resource:                                           # represents a single 
         self.is_available = True
 
     def display_details(self):                               # shows this resource's info in a readable format
-        print(f"Resource ID: {self.resource_id}, Name: {self.name}, Category: {self.category}, Availability: {'Available' if self.is_available else 'Not Available'}")    
+        print(f"Resource ID: {self.resource_id}, Name: {self.name}, Category: {self.category}, Availability: {'Available' if self.is_available else 'Not Available'}")
+
+    def to_dict(self):
+        return{
+            "resource_id": self.resource_id,
+            "name": self.name,
+            "category": self.category,
+            "is_available": self.is_available
+        }
+    @staticmethod
+    def from_dict(data):                                      # rebuilds a Resource object from a dictionary that was loaded from a file
+        return Resource(data["resource_id"], data["name"], data["category"], data["is_available"])
