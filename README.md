@@ -54,3 +54,4 @@ helping the resource centre manage its inventory efficiently.
 - **Interactive Menu Loop** – A continuous numbered console menu drives the application until the user chooses to exit.
 - **Automated Test Script** – `test_run.py` verifies core borrowing behaviour, including successful borrow/return cycles and blocking a resource from being borrowed while already on loan.
 
+
