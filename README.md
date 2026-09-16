@@ -83,3 +83,32 @@ python main.py
 3. Run `python main.py`.
 4. Follow the on-screen menu to add resources, register students, borrow, and return items.
 
+## Team Contributions
+
+**Goodness Mouka** — Core Classes & Data Structure
+* Design and build the main classes (e.g., Resource, Member)
+* Decide what info each class stores (name, status, borrower, due date, etc.)
+* Write the basic methods each class needs (add resource, check availability, etc.)
+* Recorded a video explaining the task done
+
+**Modupe Summayah** — Borrowing System Logic
+* Build the BorrowingSystem class — the part that actually handles borrowing and returning items
+* Write the logic for checking if something's available, marking it borrowed, and marking it returned
+* Handle overdue tracking (comparing dates)
+* Recorded a video explaining the task done
+
+**Titilayo Daniyan** — File Handling (Saving & Loading Data)
+* Write the code that saves data to a file (e.g., resources.txt/.json) whenever someone borrows/returns something
+* Write the code that reads the file back in when the program starts, so nothing is lost between runs
+* Make sure the "Files Used" section of the README matches what she built
+* Updated the test run. py and main. py
+* Recorded a video explaining the task done
+* Update the test plan doc, class design and test results
+
+**Yahya Roheemot** — Testing & Documentation
+ * Wrote and maintained the project README (Main Features, Classes Used, Files Used, How to Run the     Application, Teams Contribution)
+* Carried out full application testing of `main.py`, covering valid and invalid inputs across all menu options (add resource, register student, borrow, return, error handling)
+* Verified file handling and data persistence by checking `resources.json`, `students.json`, and `borrowings.json` after running the application
+* Resolved Git merge conflicts and removed untracked `__pycache__` files
+* Added a `.gitignore` file to keep the repository clean going forward
+* Recorded a video explaining the task done
