@@ -17,9 +17,7 @@ resource centre, such as books, equipment, or study materials. The system
 keeps track of available items, who has borrowed what, and due dates, 
 helping the resource centre manage its inventory efficiently.
 
-
-# Main Features
-
+## Main Features
 
 ### Resource Management
 - **Add Resource** – Register new resources with a unique ID, name, and category (e.g. Electronics, Book, Equipment).
@@ -32,7 +30,7 @@ helping the resource centre manage its inventory efficiently.
 
 ### Borrowing & Returning
 - **Borrow Resource** – Borrow an available resource for a specified number of days; the due date is calculated automatically.
-- **Availability Check** – A resource that is already borrowed cannot be borrowed again until it's returned.
+- **Availability Check** – A resource already borrowed cannot be borrowed again until it is returned.
 - **Return Resource** – Returning a resource updates its status back to available and closes out the borrowing record.
 - **Display Currently Borrowed Resources** – View all borrowing records, including resource ID, student ID, borrow date, due date, and status (Borrowed/Returned).
 
@@ -52,6 +50,36 @@ helping the resource centre manage its inventory efficiently.
 - **Object-Oriented Structure** – Built using separate `Resource`, `Student`, `Borrowing`, and `BorrowingSystem` classes across dedicated modules.
 - **Serialization Support** – Each class supports `to_dict()` and `from_dict()` for converting objects to and from JSON.
 - **Interactive Menu Loop** – A continuous numbered console menu drives the application until the user chooses to exit.
-- **Automated Test Script** – `test_run.py` verifies core borrowing behaviour, including successful borrow/return cycles and blocking a resource from being borrowed while already on loan.
+- **Automated Test Script** – `test_run.py` verifies core borrowing behaviour.
 
+## Classes Used
+
+- **`Resource`** – Represents a borrowable item (e.g. projector, laptop, book). Stores a resource ID, name, category, and availability status.
+- **`Student`** – Represents a registered student. Stores a student ID, name, email, course, and entrance year.
+- **`Borrowing`** – Represents a single borrowing transaction, linking a resource and student with a borrow date, due date, and status (Borrowed/Returned).
+- **`BorrowingSystem`** – Manages the core borrowing logic: lending resources, processing returns, checking availability, and tracking all borrowing records.
+
+## Files Used
+
+- **`main.py`** – The entry point of the application; runs the interactive menu and connects all the other modules together.
+- **`resource.py`** – Defines the `Resource` class.
+- **`student.py`** – Defines the `Student` class.
+- **`borrowing.py`** – Defines the `Borrowing` class.
+- **`borrowingsystem.py`** – Defines the `BorrowingSystem` class, which handles borrow/return logic.
+- **`resources.json`** – Stores all registered resources so data is retained between sessions.
+- **`students.json`** – Stores all registered students.
+- **`borrowings.json`** – Stores all borrowing records.
+- **`test_run.py`** – An automated test script that verifies core borrowing behaviour.
+
+## How to Run the Application
+
+For example:
+
+python main.py
+
+
+1. Make sure Python 3 is installed on your machine.
+2. Open a terminal in the project folder.
+3. Run `python main.py`.
+4. Follow the on-screen menu to add resources, register students, borrow, and return items.
 

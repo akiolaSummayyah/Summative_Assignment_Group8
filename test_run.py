@@ -1,14 +1,7 @@
-
+from resource import Resource                         # use the real Resource class instead of a local copy
 from borrowingsystem import BorrowingSystem
 
-
-class Resource:
-    def __init__(self, resource_id, name, is_available=True):
-        self.resource_id = resource_id
-        self.name = name
-        self.is_available = is_available
-
-project = Resource("PRJ001", "Projector")
+project = Resource("PRJ001", "Projector", "Electronics")   # real Resource needs a category as the 3rd argument
 system = BorrowingSystem()
 system.borrow_resource(project, "STU001", due_days=7)
 system.borrow_resource(project, "STU002", due_days=5)
@@ -19,6 +12,3 @@ system.display_borrowings()
 
 
 
-
-
-                         
